@@ -12,7 +12,7 @@ Restart=always
 
 ExecStart=/usr/bin/screen -S terraria -D -m /usr/bin/mono-sgen TerrariaServer.exe -world "Worlds/Return_of_the_4Heads.wld" -config "tshock/config.json" "tshock/config.json" -killinactivesocket -connperip 3
 
-ExecStop=/usr/bin/screen -p 0 -S mc-%i -X eval 'stuff "say SERVER SHUTTING DOWN IN 5 SECONDS. SAVING ALL MAPS..."\015'
+ExecStop=/usr/bin/screen -p 0 -S terraria -X eval 'stuff "say SERVER SHUTTING DOWN IN 5 SECONDS. SAVING ALL MAPS..."\015'
 ExecStop=/bin/sleep 5
 ExecStop=/usr/bin/screen -p 0 -S terraria -X eval 'stuff "save"\015'
 ExecStop=/usr/bin/screen -p 0 -S terraria -X eval 'stuff "stop"\015'
